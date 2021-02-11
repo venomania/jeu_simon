@@ -1,0 +1,52 @@
+.carre {
+    display: inline-block;
+    width:200px;
+    height:200px;
+    background-color:#ccc;
+    cursor:pointer;
+  }
+  
+  .bleu {
+    background-color:blue;
+  }
+  .rouge {
+    background-color:red;
+  }
+  .vert {
+    background-color:green;
+  }
+  .jaune {
+    background-color:yellow;
+  }
+body{
+    background: url(https://media.giphy.com/media/LwzI8l6ncLwRNgzPx4/giphy.gif)no-repeat center center;
+    height: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    
+   overflow-y: hidden; 
+}
+html{
+    height: 1000px;
+}
+.conte-jeux{
+    margin-top: 135px;
+    display: flex;
+    justify-content: center;
+}
+h1{
+    font-family: 'Stalinist One', cursive;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+button{
+    font-family: 'Stalinist One', cursive;
+    padding: 18px;
+    background: violet;
+    color: yellow;
+    box-shadow: 4px 4px #af5fafad;
+    outline:none;
+}
