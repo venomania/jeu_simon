@@ -48,7 +48,7 @@ const vm = new Vue({
 		},
 		newGame() {
 
-			countDownDate = new Date().getHours();
+			countDownDate = new Date();
 
 			this.sequence = [];
 			this.nextTurn();
@@ -88,16 +88,25 @@ const vm = new Vue({
 				}, 400);
 			} else {
 
+
+				 let now = new Date();
+				 var h = now.getHours() - countDownDate.getHours()  ;
+				 var m = now.getMinutes() - countDownDate.getMinutes()  ;
+				 var s = now.getSeconds() -countDownDate.getSeconds() ;
+				var restdate = h +"h " + m + "m "+ s+" s";
 				// alert('perdu');
 				let date1 = new Date();
-				console.log(date1);
-				console.log(countDownDate);
-				console.log(scrore);
+			
 				var person = prompt("Votre pseudo");
+				console.log(date1);
+				console.log(restdate);
+				console.log(scrore);
+				console.log(person)
 				xhr.open("POST", 'https://127.0.0.1:8000/joueur/new', true);
 				xhr.setRequestHeader('X-PINGOTHER', 'pingpong');
-				xhr.setRequestHeader('Content-Type', 'application/xml');
-				xhr.send("useur=domenic");
+				xhr.setRequestHeader('Content-Type', 'application/Json');
+				xhr.setRequestHeader('Accept', '*/*');
+				xhr.send("useur="+person+"&score="+scrore+"&temps="+restdate+"&date="+new Date());
 			}
 
 		}

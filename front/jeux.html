@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Stalinist+One&display=swap" rel="stylesheet">
+    <script src="./js/vue.js"></script>
+    <title>Jeux Simon</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <button @click="newGame">
+            NOUVELLE PARTIE
+        </button>
+        <div class="conte-jeux">
+            <div>
+                <div>
+                    <span class="carre" @click="selectSquare('hautGauche')" :class="{ bleu: hautGauche }"></span>
+                    <span class="carre" @click="selectSquare('hautDroite')" :class="{ rouge: hautDroite }"></span>
+                    <span class="carre" @click="selectSquare('hautMilieu')" :class="{ vert: hautMilieu }"></span>
+                </div>
+                <div>
+                    <span class="carre" @click="selectSquare('milieuGauche')" :class="{ violet: milieuGauche }"></span>
+                    <span class="carre" @click="selectSquare('milieuDroite')" :class="{ maron: milieuDroite }"></span>
+                    <span class="carre" @click="selectSquare('milieu')" :class="{ orange: milieu }"></span>
+                </div>
+                <div>
+                    <span class="carre" @click="selectSquare('basGauche')" :class="{ rose: basGauche }"></span>
+                    <span class="carre" @click="selectSquare('basMilieu')" :class="{ rouge: basMilieu }"></span>
+                    <span class="carre" @click="selectSquare('basDroite')" :class="{ jaune: basDroite }"></span>
+                </div>
+            </div>
+        </div>
+        <h1> {{ score }}</h1>
+    </div>
+    <script type="text/javascript" src="./js/index.js"></script>
+</body>
+
+</html>

@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Entity;
-
+use Symfony\Component\Serializer\Annotation\Groups;
 use App\Repository\JoueurRepository;
+
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -11,6 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Joueur
 {
     /**
+     * @Groups("joueur")
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
@@ -18,21 +20,25 @@ class Joueur
     private $id;
 
     /**
+     * @Groups("joueur")
      * @ORM\Column(type="string", length=255)
      */
     private $useur;
 
     /**
+     * @Groups("joueur")
      * @ORM\Column(type="integer")
      */
     private $score;
 
     /**
+     * @Groups("joueur")
      * @ORM\Column(type="string", length=255)
      */
     private $temps;
 
     /**
+     * @Groups("joueur")
      * @ORM\Column(type="date", nullable=true)
      */
     private $date;
