@@ -1,10 +1,12 @@
 let scrore = 0;
+let times;
+var countDownDate;
 var xhr = new XMLHttpRequest();
 
 const vm = new Vue({
 	el: '#app',
 	data: {
-	
+
 		sequence: [],
 		hautGauche: false,
 		hautDroite: false,
@@ -16,20 +18,20 @@ const vm = new Vue({
 		milieuGauche: false,
 		milieuDroite: false,
 		tmp: [],
-	
-		squareMapping: ['hautGauche', 'hautDroite', 'basDroite', 'basGauche','hautMilieu','milieu','basMilieu','milieuGauche','milieuDroite'],
+
+		squareMapping: ['hautGauche', 'hautMilieu','hautDroite', 'basDroite','milieuGauche',  'milieu',  'milieuDroite','basMilieu', 'basGauche'],
 	},
 	computed: {
 		score() {
 			const value = this.sequence.length - 1
-            scrore = value;
-			return ( value < 0 ) ? `Score : 0` : `Score: ${value}`;
+			scrore = value;
+			return (value < 0) ? `Score : 0` : `Score: ${value}`;
 		}
 	},
 	methods: {
-	
+
 		addNewElemToSequense() {
-			this.sequence.push(this.squareMapping[Math.floor(Math.random() * 4)]);
+			this.sequence.push(this.squareMapping[Math.floor(Math.random() * 9)]);
 			this.tmp = this.sequence.slice();
 		},
 
@@ -40,11 +42,13 @@ const vm = new Vue({
 			this.basDroite = false;
 			this.hautMilieu = false,
 			this.milieu = false,
-			this.basMilieu= false,
-			this.milieuGauche= false,
+			this.basMilieu = false,
+			this.milieuGauche = false,
 			this.milieuDroite = false
 		},
 		newGame() {
+
+			countDownDate = new Date().getHours();
 
 			this.sequence = [];
 			this.nextTurn();
@@ -83,12 +87,16 @@ const vm = new Vue({
 					}
 				}, 400);
 			} else {
+
 				// alert('perdu');
-                var person = prompt("Votre pseudo");
+				let date1 = new Date();
+				console.log(date1);
+				console.log(countDownDate);
+				console.log(scrore);
+				var person = prompt("Votre pseudo");
 				xhr.open("POST", 'https://127.0.0.1:8000/joueur/new', true);
 				xhr.setRequestHeader('X-PINGOTHER', 'pingpong');
 				xhr.setRequestHeader('Content-Type', 'application/xml');
-				
 				xhr.send("useur=domenic");
 			}
 

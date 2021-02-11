@@ -23,16 +23,16 @@
                 <div>
                     <span class="carre" @click="selectSquare('hautGauche')" :class="{ bleu: hautGauche }"></span>
                     <span class="carre" @click="selectSquare('hautDroite')" :class="{ rouge: hautDroite }"></span>
-                    <span class="carre" @click="selectSquare('hautDroite')" :class="{ rouge: hautMilieu }"></span>
+                    <span class="carre" @click="selectSquare('hautMilieu')" :class="{ vert: hautMilieu }"></span>
                 </div>
                 <div>
-                    <span class="carre" @click="selectSquare('basGauche')" :class="{ vert: milieuGauche }"></span>
-                    <span class="carre" @click="selectSquare('hautDroite')" :class="{ rouge: milieuDroite }"></span>
-                    <span class="carre" @click="selectSquare('basDroite')" :class="{ jaune: milieu }"></span>
+                    <span class="carre" @click="selectSquare('milieuGauche')" :class="{ violet: milieuGauche }"></span>
+                    <span class="carre" @click="selectSquare('milieuDroite')" :class="{ maron: milieuDroite }"></span>
+                    <span class="carre" @click="selectSquare('milieu')" :class="{ orange: milieu }"></span>
                 </div>
                 <div>
-                    <span class="carre" @click="selectSquare('basGauche')" :class="{ vert: basGauche }"></span>
-                    <span class="carre" @click="selectSquare('hautDroite')" :class="{ rouge: basMilieu }"></span>
+                    <span class="carre" @click="selectSquare('basGauche')" :class="{ rose: basGauche }"></span>
+                    <span class="carre" @click="selectSquare('basMilieu')" :class="{ rouge: basMilieu }"></span>
                     <span class="carre" @click="selectSquare('basDroite')" :class="{ jaune: basDroite }"></span>
                 </div>
             </div>

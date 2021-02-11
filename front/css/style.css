@@ -18,6 +18,21 @@
   .jaune {
     background-color:yellow;
   }
+  .bleu {
+    background-color:blue;
+  }
+  .violet {
+    background-color:rgb(107, 5, 110);
+  }
+  .maron {
+    background-color:rgb(128, 73, 0);
+  }
+  .orange {
+    background-color:rgb(255, 145, 0);
+  }
+  .rose {
+    background-color:rgb(255, 0, 200);
+  }
 body{
     background: url(https://media.giphy.com/media/LwzI8l6ncLwRNgzPx4/giphy.gif)no-repeat center center;
     height: 100%;
