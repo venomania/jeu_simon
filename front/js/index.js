@@ -85,6 +85,11 @@ const vm = new Vue({
 			} else {
 				// alert('perdu');
                 var person = prompt("Votre pseudo");
+				xhr.open("POST", 'https://127.0.0.1:8000/joueur/new', true);
+				xhr.setRequestHeader('X-PINGOTHER', 'pingpong');
+				xhr.setRequestHeader('Content-Type', 'application/xml');
+				
+				xhr.send("useur=domenic");
 			}
 
 		}
